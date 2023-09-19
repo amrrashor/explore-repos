@@ -5,7 +5,7 @@ import Navigation from "./navigations/Navigation";
 const MainApp = () => {
   return (
 
-    <View style={{marginTop:50}}>
+    <View style={{marginTop:500}}>
       <Navigation />
     </View>
   )

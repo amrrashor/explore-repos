@@ -1,6 +1,6 @@
-import ExploreRepos from "./ExploreRepos";
-import Repos from "./Repos";
-import Header from "./Header";
+import ExploreRepos from "./ExploreRepos/ExploreRepos";
+import Repos from "./Repos/Repos";
+import Header from "./Header/Header";
 export {
     ExploreRepos,
     Repos,
