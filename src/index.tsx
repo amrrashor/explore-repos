@@ -1,13 +1,15 @@
-import { Text, View } from "react-native";
+import { ThemeProvider } from 'styled-components';
+
 import Navigation from "./navigations/Navigation";
+import { theme } from './utils/theme';
 
 
 const MainApp = () => {
   return (
 
-    <View style={{marginTop:500}}>
+    <ThemeProvider theme={theme}>
       <Navigation />
-    </View>
+    </ThemeProvider>
   )
 }
 

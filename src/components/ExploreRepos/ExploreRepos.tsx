@@ -1,8 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { View, Text, FlatList } from 'react-native';
-import { RootState } from '../../store/store'; // Update the import path
 import { fetchRepos } from '../../store/slices/repoSlice';
+import SingleRepo from '../SingleRepo/SingleRepo';
+import { SingleRepoProps } from '../../types';
+
+
+
+interface props {
+  item: SingleRepoProps
+}
 
 const ExploreRepos = () => {
   const dispatch = useDispatch();
@@ -22,11 +29,8 @@ const ExploreRepos = () => {
     return <Text>Error: {error}</Text>;
   }
 
-  const renderRepoItem = ({ item }: { item: { name: string; id: number; full_name: string } }) => (
-    <View key={item.id}>
-      <Text style={{ color: '#000' }}>{item.name}</Text>
-      <Text style={{ color: '#000' }}>{item.full_name}</Text>
-    </View>
+  const renderRepoItem = ( {item} : { item :props }) => (
+    <SingleRepo key={item.id} {...item} />
   );
 
   return (
