@@ -1,16 +1,15 @@
 import { Provider } from "react-redux";
-import MainApp from "./src";
+import Navigation from "./src/navigations/Navigation";
+
+import store from "./src/store/store";
 
 
-
-const store = {
-  
-}
 function App(): JSX.Element {
   return (
-    // <Provider store={store}>
-      <MainApp />
-    // </Provider>
+
+    <Provider store={store}>
+      <Navigation />
+    </Provider>
   );
 }
 

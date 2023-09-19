@@ -1,9 +1,10 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { View } from 'react-native';
+
 
 //COMPONENTS
-import { ExploreRepos , Repos} from '../components';
+import { ExploreRepos, Repos } from '../components';
+
 const Stack = createNativeStackNavigator();
 
 
