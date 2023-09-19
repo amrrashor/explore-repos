@@ -1,9 +1,13 @@
+import { Text, View } from "react-native";
 import Navigation from "./navigations/Navigation";
 
 
 const MainApp = () => {
   return (
-    <Navigation />
+
+    <View style={{marginTop:50}}>
+      <Navigation />
+    </View>
   )
 }
 
