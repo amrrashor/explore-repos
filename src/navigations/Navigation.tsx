@@ -13,7 +13,7 @@ const Navigation = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                screenOptions={{ header: Header}}
+                screenOptions={{ header: Header }}
             >
                 <Stack.Screen name='Explore' component={ExploreRepos} />
                 <Stack.Screen name='Repos' component={Repos} />
