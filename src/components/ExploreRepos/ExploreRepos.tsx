@@ -5,7 +5,7 @@ import { fetchRepos } from '../../store/slices/repoSlice';
 import SingleRepo from '../SingleRepo/SingleRepo';
 import { SingleRepoProps } from '../../types';
 
-import { Container } from '../StyledComponents.style';
+import { Container, Title } from '../StyledComponents.style';
 
 interface props {
   item: SingleRepoProps
@@ -35,7 +35,7 @@ const ExploreRepos = () => {
 
   return (
     <Container>
-      <Text>Explore Popular</Text>
+      <Title>Explore Popular</Title>
       <FlatList
         data={repos}
         renderItem={renderRepoItem}
