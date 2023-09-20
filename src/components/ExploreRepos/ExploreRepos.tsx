@@ -7,7 +7,6 @@ import { SingleRepoProps } from '../../types';
 import { Container, StyledText, DropDownStyle, dropDownContainerStyle } from '../StyledComponents.style';
 import DropDownPicker from 'react-native-dropdown-picker';
 
-
 const ExploreRepos = () => {
   const dispatch = useDispatch();
   const repos = useSelector((state) => state.repos.repos);
@@ -62,7 +61,7 @@ const ExploreRepos = () => {
       <DropDownPicker
         style={DropDownStyle}
         open={open}
-        value={`View: ${value}`}
+        value={ value}
         items={items}
         setOpen={setOpen}
         setValue={setValue}

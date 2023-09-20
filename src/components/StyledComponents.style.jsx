@@ -23,7 +23,8 @@ export const DropDownStyle = {
     marginBottom: 20,
     borderWidth: 0,
     maxWidth: 150,
-    color:'#000'
+    color: '#000',
+    position:'relative'
 }
 
 export const dropDownContainerStyle = {
