@@ -1,15 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList , ActivityIndicator} from 'react-native';
 import { fetchRepos } from '../../store/slices/repoSlice';
 import SingleRepo from '../SingleRepo/SingleRepo';
 import { SingleRepoProps } from '../../types';
-
 import { Container, StyledText } from '../StyledComponents.style';
-
-interface props {
-  item: SingleRepoProps
-}
 
 const ExploreRepos = () => {
   const dispatch = useDispatch();
@@ -22,15 +17,19 @@ const ExploreRepos = () => {
   }, [dispatch]);
 
   if (status === 'loading') {
-    return <Text>Loading...</Text>;
+    return <ActivityIndicator size="large" style={{flex:1}} />;
   }
 
   if (status === 'failed') {
     return <Text>Error: {error}</Text>;
   }
 
-  const renderRepoItem = ( {item} : { item :props }) => (
-    <SingleRepo key={item.id} {...item}  Explore={true}/>
+  const renderRepoItem = ( {item} : { item :SingleRepoProps }) => (
+    <SingleRepo
+      key={item.id}
+      {...item}
+      Explore={true}
+    />
   );
 
   return (
@@ -41,6 +40,7 @@ const ExploreRepos = () => {
         renderItem={renderRepoItem}
         keyExtractor={(item) => item.id.toString()}
         showsVerticalScrollIndicator={false}
+        ListFooterComponent={() => <View style={{ height: 100 }} />}
       />
     </Container>
   );
