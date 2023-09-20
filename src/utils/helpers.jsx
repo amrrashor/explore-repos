@@ -58,3 +58,20 @@
         return time.toLocaleString();
     }
     }
+
+
+export function convertDateFormat(dateString) {
+  // Parse the date string into a Date object.
+  const date = new Date(dateString);
+
+  // Get the month, day, and year from the Date object.
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const year = date.getFullYear();
+
+  // Convert the month to a short string.
+  const shortMonth = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][month - 1];
+
+  // Return the converted date in the desired format.
+  return `${day} ${shortMonth} ${year}`;
+}
