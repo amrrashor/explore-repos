@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.View`
-    margin-left: 15px;
-    margin-right: 15px;
+    padding: 15px;
+    padding: 15px;
+    background-color:  #FAFCFE
+;
 `
 
 export const StyledText = styled.Text`
@@ -15,3 +17,17 @@ export const StyledText = styled.Text`
     margin-right: ${(props) => props.mr ? 8 : 0 };
     font-size: ${(props) => props.fontXL ? 20 : props.fontL ? 18 : props.fontM ? 14 : props.fontS ? 12 : 10};
 `
+
+
+export const DropDownStyle = {
+    marginBottom: 20,
+    borderWidth: 0,
+    maxWidth: 150,
+    color:'#000'
+}
+
+export const dropDownContainerStyle = {
+    maxWidth: 150,
+    borderWidth: 0,
+    borderRadius: 8,
+}
