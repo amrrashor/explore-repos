@@ -32,3 +32,8 @@ export const dropDownContainerStyle = {
     borderWidth: 0,
     borderRadius: 8,
 }
+
+export const modalContentContainerStyle = {
+    backgroundColor: '#fff',
+    maxHeight:'450px',
+}
