@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native';
-import { Title } from '../StyledComponents.style';
+import { StyledText } from '../StyledComponents.style';
 
 const Repos = () => {
     return (
         <View>
-            <Title>Repositories</Title>
+            <StyledText black mb mt fontXL>Repositories</StyledText>
         </View>
     )
 }

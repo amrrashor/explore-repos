@@ -5,7 +5,7 @@ import { fetchRepos } from '../../store/slices/repoSlice';
 import SingleRepo from '../SingleRepo/SingleRepo';
 import { SingleRepoProps } from '../../types';
 
-import { Container, Title } from '../StyledComponents.style';
+import { Container, StyledText } from '../StyledComponents.style';
 
 interface props {
   item: SingleRepoProps
@@ -30,12 +30,12 @@ const ExploreRepos = () => {
   }
 
   const renderRepoItem = ( {item} : { item :props }) => (
-    <SingleRepo key={item.id} {...item} />
+    <SingleRepo key={item.id} {...item}  Explore={true}/>
   );
 
   return (
     <Container>
-      <Title>Explore Popular</Title>
+      <StyledText black mb mt fontXL>Explore Popular</StyledText>
       <FlatList
         data={repos}
         renderItem={renderRepoItem}

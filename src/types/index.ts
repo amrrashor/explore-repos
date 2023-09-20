@@ -5,4 +5,6 @@ export interface SingleRepoProps {
     description: string,
     updated_at: string,
     language: string,
+    Explore: boolean,
+    Repos: boolean,
 }

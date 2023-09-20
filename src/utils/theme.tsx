@@ -4,5 +4,6 @@ export const theme = {
         gray: '#7B848D',
         cyan: '#68DDBA',
         white: '#FFFFFF',
+        lightCyan: '#68DDBA1C',
     },
 }
