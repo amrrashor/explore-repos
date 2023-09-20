@@ -4,9 +4,12 @@ import styled from "styled-components";
 
 export const Container = styled.View`
     max-width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    min-height: 200px;
     margin-bottom: 15px;
     padding:  10px 10px 10px;
-    padding-top: ${(props) => props.Explore? 20 : 10};
+    padding-top: ${(props) => props.Explore? 10 : 0};
     background-color: ${({ theme }) => theme.colors.white};
     border-radius: 12px;
 `
