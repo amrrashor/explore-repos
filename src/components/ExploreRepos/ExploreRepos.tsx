@@ -5,7 +5,7 @@ import { fetchRepos } from '../../store/slices/repoSlice';
 import SingleRepo from '../SingleRepo/SingleRepo';
 import { SingleRepoProps } from '../../types';
 
-
+import { Container } from '../StyledComponents.style';
 
 interface props {
   item: SingleRepoProps
@@ -34,14 +34,15 @@ const ExploreRepos = () => {
   );
 
   return (
-    <View>
+    <Container>
+      <Text>Explore Popular</Text>
       <FlatList
         data={repos}
         renderItem={renderRepoItem}
         keyExtractor={(item) => item.id.toString()}
         showsVerticalScrollIndicator={false}
       />
-    </View>
+    </Container>
   );
 };
 
