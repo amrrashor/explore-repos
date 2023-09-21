@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { View, Text, FlatList , ActivityIndicator} from 'react-native';
+import { View, Text, FlatList, ActivityIndicator } from 'react-native';
 import { fetchRepos } from '../../store/slices/repoSlice';
 import SingleRepo from '../SingleRepo/SingleRepo';
 import { SingleRepoProps } from '../../types';
@@ -12,48 +12,50 @@ const ExploreRepos = () => {
   const repos = useSelector((state) => state.repos.repos);
   const status = useSelector((state) => state.repos.status);
   const error = useSelector((state) => state.repos.error);
-  
+
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
-        {label: '10', value: '10'},
-        {label: '50', value: '50'},
-        {label: '100', value: '100'},
+    { label: '10', value: '10' },
+    { label: '50', value: '50' },
+    { label: '100', value: '100' },
   ]);
   const [filteredRepos, setFilteredRepos] = useState(repos);
-
 
   useEffect(() => {
     dispatch(fetchRepos());
   }, [dispatch]);
 
   useEffect(() => {
+    // Sort the repos by stars count in descending order
+    const sortedRepos = repos.slice().sort((a, b) => b.stargazers_count - a.stargazers_count);
+
     // Filter the repos based on the selected value
     if (value) {
       const numberOfReposToShow = parseInt(value, 10);
-      setFilteredRepos(repos.slice(0, numberOfReposToShow));
+      setFilteredRepos(sortedRepos.slice(0, numberOfReposToShow));
     } else {
       // If no value is selected, show all repos
-      setFilteredRepos(repos);
+      setFilteredRepos(sortedRepos);
     }
   }, [value, repos]);
 
   if (status === 'loading') {
-    return <ActivityIndicator size="large" style={{flex:1}} />;
+    return <ActivityIndicator size="large" style={{ flex: 1 }} />;
   }
 
   if (status === 'failed') {
     return <Text>Error: {error}</Text>;
   }
 
-  const renderRepoItem = ( {item} : { item :SingleRepoProps }) => (
+  const renderRepoItem = ({ item }: { item: SingleRepoProps }) => (
     <SingleRepo
       key={item.id}
       {...item}
       Explore={true}
     />
   );
-  console.log('repos', repos.length, filteredRepos)
+
   return (
     <Container>
       <StyledText black mb mt fontXL>Explore Popular</StyledText>
@@ -61,7 +63,7 @@ const ExploreRepos = () => {
       <DropDownPicker
         style={DropDownStyle}
         open={open}
-        value={ value}
+        value={value}
         items={items}
         setOpen={setOpen}
         setValue={setValue}

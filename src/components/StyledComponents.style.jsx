@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const Container = styled.View`
     padding: 15px;
     padding: 15px;
-    background-color:  #FAFCFE
+    background-color:  #FAFCFE;
+    flex: 1;
 ;
 `
 
@@ -23,6 +24,7 @@ export const DropDownStyle = {
     marginBottom: 20,
     borderWidth: 0,
     maxWidth: 150,
+    height:50,
     color: '#000',
     position:'relative'
 }
@@ -33,7 +35,17 @@ export const dropDownContainerStyle = {
     borderRadius: 8,
 }
 
-export const modalContentContainerStyle = {
+
+export const ModalStyles = {
     backgroundColor: '#fff',
-    maxHeight:'450px',
+    width: '90%',
+    marginTop: 50,
+    marginBottom: 50,
+    marginLeft: 'auto',
+    marginRight:'auto',
+    maxHeight: 500,
+    borderRadius: 12,
+    padding:20,
+    display: 'flex',
+    justifyContent: 'flex-start',
 }
