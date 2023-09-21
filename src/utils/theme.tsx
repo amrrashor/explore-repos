@@ -7,4 +7,7 @@ export const theme = {
         lightCyan: '#68DDBA1C',
         secondaryGray:'#CCD4DD5E'
     },
+    borders: {
+        border_1:  '1px solid #CCD4DD'
+    }
 }
