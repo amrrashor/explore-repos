@@ -72,16 +72,14 @@ const Repos = () => {
 
         return (
             <LanguageItem onPress={() => {
-            setSelectedLanguage(item.language);
-            setOpenModal(false); // Close the language modal after selection
-            }}>
+                setSelectedLanguage(item.language);
+                setOpenModal(false); // Close the language modal after selection
+                }}
+            >
             <StyledText fontM black>{item.language}</StyledText>
             </LanguageItem>
         );
     };
-
-
-
 
     // Convert the selectedDate to the original format before filtering
     const originalFormatSelectedDate = items.find(item => item.value === selectedDate)?.value;
