@@ -77,10 +77,14 @@ const Repos = () => {
                         listMode='MODAL'
                         searchable={true}
                         modalAnimationType='fade'
-                        modalContentContainerStyle={{ backgroundColor: '#fff' }}
+                        modalContentContainerStyle={{ backgroundColor: 'none' }}
                         searchPlaceholder='Filter Languages'
                         showBadgeDot
                         CloseIconComponent={CloseIcon}
+                        searchTextInputStyle={{ borderColor: '#CCD4DD' }}
+                        itemSeparator
+                        itemSeparatorStyle={{ backgroundColor: '#CCD4DD5E' }}
+                    
                     />
                 </PickerContainer>
                 <PickerContainer>

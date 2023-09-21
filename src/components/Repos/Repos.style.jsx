@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import DropDownPicker from "react-native-dropdown-picker";
 export const FilterContainer = styled.View`
     display: flex;
     flex-direction: row;
@@ -11,5 +11,4 @@ export const FilterContainer = styled.View`
 
 export const PickerContainer = styled.View`
     width: 150px;
-
 `
